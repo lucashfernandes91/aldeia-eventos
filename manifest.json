@@ -1,0 +1,21 @@
+{
+  "name": "Aldeia Eventos",
+  "short_name": "Aldeia Eventos",
+  "description": "Versao offline do site Aldeia Eventos.",
+  "icons": [
+    {
+      "src": "assets/asset_d5270761a62e622bd355c4063a773629.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/asset_d5270761a62e622bd355c4063a773629.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
