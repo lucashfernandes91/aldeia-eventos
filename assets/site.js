@@ -67,8 +67,8 @@
     const counters = [
       { label: "de área construída", value: 800, suffix: "m²" },
       { label: "de área verde", value: 3000, suffix: "m²" },
-      { label: "convidados", value: 350, suffix: "" },
-      { label: "do centro", value: 10, suffix: "min" },
+      { label: "convidados", value: 150, suffix: "" },
+      { label: "do centro", value: 4, suffix: "Km" },
     ];
 
     counters.forEach(({ label, value, suffix }) => {
