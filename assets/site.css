@@ -101,8 +101,22 @@ nav.fixed.is-scrolled a.text-white\/70,
 nav.fixed.is-scrolled .text-white\/70 {
   color: hsl(var(--foreground) / .72) !important;
 }
-nav.fixed.is-scrolled a:first-child span:last-child {
-  color: hsl(var(--accent)) !important;
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.site-brand__logo {
+  width: auto;
+  height: 3rem;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, .22));
+  transition:
+    transform 240ms ease,
+    filter 240ms ease,
+    opacity 240ms ease;
+}
+nav.fixed.is-scrolled .site-brand__logo {
+  filter: drop-shadow(0 8px 18px rgba(25, 34, 28, .08));
 }
 nav.fixed.is-scrolled a[href*="wa.me"] {
   border-color: hsl(var(--primary) / .7) !important;
@@ -110,6 +124,35 @@ nav.fixed.is-scrolled a[href*="wa.me"] {
 }
 nav.fixed.is-scrolled a[href*="wa.me"]:hover {
   background: hsl(var(--primary) / .08) !important;
+}
+.offline-whatsapp-fab {
+  position: fixed;
+  right: calc(1rem + env(safe-area-inset-right, 0px));
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 85;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 9999px;
+  background: transparent;
+  box-shadow: 0 18px 40px rgba(17, 17, 17, .18);
+  transition:
+    transform 240ms ease,
+    box-shadow 240ms ease;
+}
+.offline-whatsapp-fab:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 22px 44px rgba(17, 17, 17, .24);
+}
+.offline-whatsapp-fab:focus-visible {
+  outline: 3px solid hsl(var(--accent));
+  outline-offset: 4px;
+}
+.offline-whatsapp-fab__icon {
+  width: 3rem;
+  height: 3rem;
 }
 [data-offline-reveal] {
   opacity: 0 !important;
@@ -219,7 +262,8 @@ nav.fixed.is-scrolled a[href*="wa.me"]:hover {
   .offline-gallery-modal,
   .offline-gallery-modal img,
   .offline-testimonial-content,
-  .offline-testimonial-dot {
+  .offline-testimonial-dot,
+  .offline-whatsapp-fab {
     transition: none !important;
     transform: none !important;
   }
@@ -268,5 +312,20 @@ nav.fixed.is-scrolled a[href*="wa.me"]:hover {
     opacity: 1;
     pointer-events: auto;
     transform: translate3d(0, 0, 0);
+  }
+}
+@media (min-width: 768px) {
+  .site-brand__logo {
+    height: 3.5rem;
+  }
+  .offline-whatsapp-fab {
+    right: calc(1.5rem + env(safe-area-inset-right, 0px));
+    bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    width: 4.25rem;
+    height: 4.25rem;
+  }
+  .offline-whatsapp-fab__icon {
+    width: 3.25rem;
+    height: 3.25rem;
   }
 }
